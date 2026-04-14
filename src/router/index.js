@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import BackendLayout from '../components/BackendLayout.vue'
 import AuthLayout from '../components/AuthLayout.vue'
 import FrontendLayout from '../components/FrontendLayout.vue'
@@ -102,7 +102,7 @@ const frontendRoutes = [
 
 //创建router实例
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   // 前台路由+后台路由
   routes: [...backendRoutes, ...frontendRoutes]
 })
