@@ -22,7 +22,7 @@ const props = defineProps({
 const renderedContent = computed(() => {
   let html = props.content
 
-  // 转义HTML标签（防止XSS）
+  // 转义HTML标签（防止XSS） XSS是跨站脚本攻击，攻击者在网站注入恶意脚本，用户用浏览器访问网站的时候，浏览器会执行恶意脚本
   html = html.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
   // 处理代码块（```）
